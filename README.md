@@ -3,9 +3,9 @@
 ## Instructions to Run
 **Required dependencies:** PyQt5, PyQtGraph, NumPy. Tested on MacOS using Python 3.
 
-These dependencies can be installed via ``pip install [dependency]``.
+These dependencies can be installed via ``pip install [dependency]``. Download this repo by clicking 'Download ZIP'.
 
-Once installed, open terminal and ``cd`` into folder. 
+Once unzipped, open terminal and ``cd`` into folder. 
 
 Run ``python main.py`` to run the GraphViewer. 
 Run ``python test.py`` to run unit tests.
