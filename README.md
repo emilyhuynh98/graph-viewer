@@ -54,7 +54,11 @@ self.functions = [" ","Sine", "Sawtooth", "Exponential", "Linear"]
 Open ``Controller.py`` and in between lines 85-104, add
 ```Python
 elif fcn == 'Linear'
-to_plot = Linear(self.curr_params) 
+	to_plot = Linear(self.curr_params) 
+```
+At the top of the file, on line 4, add Linear:
+```
+from Function import Sine,Sawtooth,Exponential,Linear
 ```
 Saving all these files and running ``python main.py`` again to open a new window will show your new function!
 
