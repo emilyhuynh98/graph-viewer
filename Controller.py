@@ -186,7 +186,7 @@ class Controller:
 
 		# Checking that resolution is adeuqate for exponential functions that contain an asymptote.
 		# Imposed requirement on resolution due to approximation of array slicing around the asymptote.
-		elif params[2] > np.abs(params[1] - params[0])/6.5 and self.currFcn == 'Exponential' and params[4] < 0 and params[4] % 1 == 0:
+		elif params[2] > np.abs(params[1] - params[0])/6.5 and self.currFcn == 'Exponential' and params[4] < 0 and params[4] % 1 == 0 and params[0] < 0:
 			msg = "Resolution is too large for this range. Must be able to plot two data points within range. Returning to previous parameters."
 			self.error_msg(msg)
 			self.set_to_prev()
