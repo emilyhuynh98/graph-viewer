@@ -111,7 +111,7 @@ class testViewer(unittest.TestCase):
 		Checks if X is too large, if it will return errors.
 		"""
 		c = Controller()
-		self.assertEqual(c.is_valid([-10,-20,1,1,1]),True)
+		self.assertEqual(c.is_valid([-10,-20,1,1,1]),False)
 		self.assertEqual(c.is_valid([-10000,-20,1,1,1]),False)
 		self.assertEqual(c.is_valid([-10,-10000,1,1,1]),False)
 

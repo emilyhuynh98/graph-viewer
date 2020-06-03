@@ -52,7 +52,7 @@ self.functions = [" ","Sine", "Sawtooth", "Exponential", "Linear"]
 #### Step 3. Link the function name to the function itself.
 Open ``Controller.py`` and in between lines 85-104, add
 ```Python
-elif fcn == 'Linear'
+elif fcn == 'Linear':
 	to_plot = Linear(self.curr_params) 
 ```
 At the top of the file, on line 4, add Linear:

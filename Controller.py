@@ -151,11 +151,10 @@ class Controller:
 
 		# Checking limits on min X and max X:
 		if params[0] > params[1]:
-			temp = params[1]
-			params[1] = params[0]
-			params[0] = temp
-			msg = "min X is greater than max X. Parameters have been switched."
+			msg = "min X is greater than max X. Returning to previous parameters."
 			self.error_msg(msg)
+			self.set_to_prev()
+			return False
 
 		elif params[0] == params[1]:
 			msg = "min X is equal to max X. Returning to previous parameters."
@@ -164,8 +163,8 @@ class Controller:
 			return False
 
 		# Checking min X value limit to prevent too many calculations/timeout/memory error.
-		if np.abs(params[0]) > 1000 or np.abs(params[1]) > 1000:
-			msg = "X is too large. Returning to previous parameters."
+		if np.abs(params[0] - params[1]) > 1000:
+			msg = "X range is too large. Returning to previous parameters."
 			self.error_msg(msg)
 			self.set_to_prev()
 			return False
