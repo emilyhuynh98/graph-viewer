@@ -1,7 +1,7 @@
 ﻿# GraphViewer ReadMe
 
 ## Instructions to Run
-**Required dependencies:** Python3, PyQt5, PyQtGraph, NumPy. Tested on MacOS.
+**Required dependencies:** PyQt5, PyQtGraph, NumPy. Tested on MacOS using Python 3.
 
 These dependencies can be installed via ``pip install [dependency]``.
 
@@ -57,7 +57,7 @@ elif fcn == 'Linear'
 	to_plot = Linear(self.curr_params) 
 ```
 At the top of the file, on line 4, add Linear:
-```
+```Python
 from Function import Sine,Sawtooth,Exponential,Linear
 ```
 Saving all these files and running ``python main.py`` again to open a new window will show your new function!
