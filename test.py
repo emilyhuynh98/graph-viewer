@@ -123,25 +123,6 @@ class testViewer(unittest.TestCase):
 		c = Controller()
 		self.assertEqual(c.is_valid([-5,5,7,1,1]), False)
 
-	def Linear(self):
-		"""
-		"Added" function in for testAddFunction with A = 5, B = 3.
-		"""
-		func = Function('linear',[-10,10,0.1,5,3])
-		gen = 'Ax+B'
-		x = func.x_vals()
-		y = func.A * x + func.B
-		return y[:np.size(y)-1]
-
-	def testAddFunction(self):
-		"""
-		Tests if adding functions can be done correctly.
-		"""
-		test_function = self.Linear()
-		test_x = np.arange(-10,10.1,0.1)
-		expected = 5 * test_x + 3
-		self.assertListEqual(expected.tolist(),test_function.tolist())
-
 
 
 def main():

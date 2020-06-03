@@ -20,28 +20,27 @@ To add a function, open ``Function.py``. At the end of the file, add your functi
 
 For example, to create a Linear class extended from abstract base class Function:
 ```Python
-class Linear(object):
+class Linear(Function):
 	"""
-	Plots an linear function extended from the Function class.
+	Plots an linear function extended from the abstract Function class.
 	"""
 
 	def __init__(self,params=[-10,10,0.1,1,1]):
-		self.func = Function('linear',params)
-		self.x = self.func.x_vals()
+		self.get_params(params)
+		self.name = 'Linear'
 		self.gen = 'Ax+B'
+		self.x = self.x_vals()
 		self.y = self.y()
 
-
 	def y(self):
-		y = self.func.A * self.x + self.func.B
+		y = self.A * self.x + self.B
 		return y
 ```
 Extending from the Function class will generate the range of x-values expected by the specified or default parameters. 
 
- - The Function class is initialized as follows:
-``Function(Str function_name, List params)``.
- - ``self.gen`` is used to describe what the general form of the function does. This helps the user understand what ``A`` and ``B`` does.
- - ``def y(self)`` is where the function is actually defined.
+ - The abstract Function class is as follows:
+ - ``def get_params(self,params)`` and ``def x_vals(self)``is defined the same for every function.
+ - ``def y(self)`` is the only method that must be defined by each class (@abstractmethod.)
 
 #### Step 2. Add it to the list of functions.
 Open ``Plotter.py`` , and on line 15, add your ``function_name`` to the list.
@@ -74,7 +73,6 @@ The basic test cases from `test.py` include
  - Parameter limits
  - Appropriate x resolution
  - Type checking input parameters
- - Working new function creation
 
 ## How it works
 The GraphViewer allows the user to plot three basic pre-selected functions, and adjust the X range, resolution, as well as A and B parameters.
